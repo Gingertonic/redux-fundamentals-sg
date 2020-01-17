@@ -1,38 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway+Dots|Sacramento&display=swap');
+/* font-family: 'Sacramento', cursive;
+font-family: 'Raleway Dots', cursive;*/
+
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  /* font-family: 'Chathura', sans-serif; */
+  font-family: 'Raleway Dots';
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#project-title {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#work-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#drawing-board, #preview {
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#drawing-board > .project {
+  background-color: #cae8dc;
+  font-family: 'Raleway Dots';
+  font-weight: 700;
+  color: grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#preview > .project {
+  font-family: 'Sacramento', cursive;
+}
+
+.project {
+  height: 50vh;
+  padding: 3vw;
+  border-radius: 5%;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.project > div {
+  font-size: large;
+}
+
+p, input, textarea {
+  font-family: 'Raleway Dots';
+  font-weight: 700;
+}
+
+input, textarea {
+  font-size: large;
+  text-align: center;
+  color: grey;
+  background-color:#cae8dc;
+  border: none;
+}
+
+input::placeholder, textarea::placeholder {
+  color: grey;
+}
+
+input:focus, textarea:focus {
+  outline: none;
 }
