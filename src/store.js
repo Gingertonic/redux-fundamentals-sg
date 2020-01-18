@@ -1,9 +1,10 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import projectReducer from './reducers/projectReducer'
 import priceReducer from './reducers/priceReducer'
-import { devToolsEnhancer } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 export const store = createStore(combineReducers({ 
     project: projectReducer, 
     price: priceReducer 
-}), devToolsEnhancer())
+}), composeWithDevTools(applyMiddleware(thunk)))
