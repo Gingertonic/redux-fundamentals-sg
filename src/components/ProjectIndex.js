@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadProject } from '../actions/projectActions'
+import { loadProject, fetchProjects } from '../actions/projectActions'
 
 class ProjectIndex extends Component {
+    componentDidMount() {
+        this.props.fetchProjects()
+    }
+
     handleClick = e => {
         this.props.loadProject(e.target.id)
     }
@@ -21,4 +25,4 @@ const mSTP = state => {
     return { projects: state.project.all }
 }
 
-export default connect(mSTP, { loadProject })(ProjectIndex)
+export default connect(mSTP, { loadProject, fetchProjects })(ProjectIndex)

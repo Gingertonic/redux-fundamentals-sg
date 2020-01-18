@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateProjectDetails } from '../actions/projectActions'
+import { updateProjectDetails, saveCurrentProjectUpdates, saveNewProject } from '../actions/projectActions'
 import { increasePrice, decreasePrice } from '../actions/priceActions'
 
 class DrawingBoard extends Component {
@@ -15,6 +15,14 @@ class DrawingBoard extends Component {
             default:
                 break
        }
+    }
+
+    handleSaveChanges = () => {
+        this.props.saveCurrentProjectUpdates(this.props.project)
+    }
+
+    handleSaveAsNew = () => {
+        this.props.saveNewProject(this.props.project)
     }
 
     render() {
@@ -37,6 +45,8 @@ class DrawingBoard extends Component {
                     </div>
                 </div> 
                 <h3>Price: ${ this.props.price }</h3>
+                <button onClick={this.handleSaveChanges}>Save Changes</button>
+                <button onClick={this.handleSaveAsNew}>Save as New</button>
             </div>
         )
     }
@@ -49,4 +59,4 @@ const mSTP = state => {
     }
 }
 
-export default connect(mSTP, { updateProjectDetails, increasePrice, decreasePrice })(DrawingBoard)
+export default connect(mSTP, { updateProjectDetails, increasePrice, decreasePrice, saveCurrentProjectUpdates, saveNewProject })(DrawingBoard)
