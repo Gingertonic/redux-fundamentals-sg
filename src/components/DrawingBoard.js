@@ -44,7 +44,7 @@ class DrawingBoard extends Component {
 
 const mSTP = state => {
    return { 
-        project: state.project,
+        project: state.project.current,
         price: state.price
     }
 }

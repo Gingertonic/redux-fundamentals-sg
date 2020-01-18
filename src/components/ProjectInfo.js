@@ -1,12 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const ProjectInfo = () => {
+const ProjectInfo = props => {
     return (
         <div>
-            <h4>Project:</h4>
-            <h2 id="project-title">The Big One</h2>
+            <h2 id="project-title">{ props.title }</h2>
         </div>
     )
 }
 
-export default ProjectInfo
+const mSTP = state => {
+    return {
+        title: state.project.current.header
+    }
+}
+export default connect(mSTP)(ProjectInfo)

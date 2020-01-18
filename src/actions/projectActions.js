@@ -5,10 +5,9 @@ export const updateProjectDetails = e => {
     }
 }
 
-export const updateProjectTitle = title => {
-    console.log(title)
+export const loadProject = id => {
     return {
-        type: "UPDATE_TITLE",
-        payload: title
+        type: "LOAD_PROJECT",
+        payload: parseInt(id)
     }
 }

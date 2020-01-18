@@ -38,6 +38,16 @@ font-family: 'Raleway Dots', cursive;*/
   font-family: 'Sacramento', cursive;
 }
 
+#all-projects {
+  color: orange;
+  margin-top: 2vh;
+  font-weight: 700;
+}
+
+#all-projects > span {
+  padding: 0 2vh;
+}
+
 .project {
   height: 50vh;
   padding: 3vw;

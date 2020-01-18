@@ -32,7 +32,7 @@ class Preview extends Component {
 
 const mSTP = state => {
     return {
-        project: state.project
+        project: state.project.current
     }
 }
 
