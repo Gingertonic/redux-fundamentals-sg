@@ -12,10 +12,10 @@ class ProjectIndex extends Component {
     }
 
     render() {
-        const renderProjects = this.props.projects.map(p => <span key={p.id} id={p.id} onClick={this.handleClick}>{p.header}</span>)
+        const renderProjects = this.props.projects.map(p => <span onClick={this.handleClick()}>{p.header}</span>)
         return (
             <div id="all-projects">
-                { renderProjects }
+                renderProjects
             </div>
         )
     }

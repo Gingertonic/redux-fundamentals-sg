@@ -14,4 +14,5 @@ const mSTP = state => {
         title: state.project.current.header
     }
 }
+
 export default connect(mSTP)(ProjectInfo)
