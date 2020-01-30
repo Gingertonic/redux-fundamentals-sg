@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class Preview extends Component {
     styles  = {
-        backgroundColor: "#FF7F50",
-        color: "#ffffff"
+        backgroundColor: this.props.bgColor,
+        color: this.props.textColor
     }
 
     render() {
@@ -12,13 +13,13 @@ class Preview extends Component {
                 <h1>Preview</h1>
                 <div className="project" style={this.styles}>
                     <div>
-                        <h1>Title</h1>
+                        <h1>{this.props.header}</h1>
                     </div>
                     <div>
-                        <p>Info</p>
+                        <p>{this.props.info}</p>
                     </div>
                     <div>
-                        <h3>Date</h3>
+                        <h3>{this.props.date}</h3>
                     </div> 
                 </div> 
             </div>
@@ -26,4 +27,14 @@ class Preview extends Component {
     }
 }
 
-export default Preview
+const mSTP = state => {
+    return {
+       header: state.header,
+       date: state.date,
+       info: state.info,
+       bgColor: state.backgroundColor,
+       textColor: state.textColor 
+    }
+}
+
+export default connect(mSTP)(Preview)
