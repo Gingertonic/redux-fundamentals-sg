@@ -8,7 +8,7 @@ export const updateProjectDetails = e => {
 export const loadProject = id => {
     return {
         type: "LOAD_PROJECT",
-        payload: parseInt(id)
+        payload: id
     }
 }
 

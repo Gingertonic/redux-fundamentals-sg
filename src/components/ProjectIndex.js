@@ -8,11 +8,12 @@ class ProjectIndex extends Component {
     }
 
     handleClick = e => {
-        // this.props.loadProject(e.target.id)
+        this.props.loadProject(e.target.id)
     }
 
     render() {
         const renderProjects = this.props.projects.map(p => { <span onClick={this.handleClick()}>{p.header}</span> }) 
+
         return (
             <div id="all-projects">
                 renderProjects
